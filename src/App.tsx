@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { AppBar, Toolbar, Typography, Container } from "@mui/material";
+import CooperativasPage from "./pages/CooperativasPage";
+import CooperadosPage from "./pages/CooperadosPage";
+import ContatosPage from "./pages/ContatosPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Cooperativa
+          </Typography>
+          <Link to="/" style={{ color: "white", marginRight: 20 }}>
+            Cooperativas
+          </Link>
+          <Link to="/cooperados" style={{ color: "white", marginRight: 20 }}>
+            Cooperados
+          </Link>
+          <Link to="/contatos" style={{ color: "white" }}>
+            Contatos
+          </Link>
+        </Toolbar>
+      </AppBar>
+
+      <Container maxWidth="lg" sx={{ marginTop: 4 }}>
+        <Routes>
+          <Route path="/" element={<CooperativasPage />} />
+          <Route path="/cooperados" element={<CooperadosPage />} />
+          <Route path="/contatos" element={<ContatosPage />} />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 
