@@ -1,5 +1,5 @@
 import { MenuItem, TextField } from "@mui/material";
-import { TipoChavePix } from "../types/types";
+import { TipoChavePix } from "../../types/types";
 
 export default function PixKeyTypeSelect({
   value,
@@ -16,7 +16,7 @@ export default function PixKeyTypeSelect({
       onChange={(e) => onChange(e.target.value as TipoChavePix)}
       fullWidth
       margin="normal">
-      {Object.values(TipoChavePix).map((tipo) => (
+      {(Object.values(TipoChavePix) as TipoChavePix[]).map((tipo) => (
         <MenuItem key={tipo} value={tipo}>
           {tipo}
         </MenuItem>

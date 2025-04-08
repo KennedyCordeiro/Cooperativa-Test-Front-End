@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Button } from "@mui/material";
-import CooperativaList from "../components/CooperativaList";
-import CooperativaForm from "../components/CooperativaForm";
-import ModalStyled from "../components/ModalStyled";
+import { Container, Typography, Button } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import CooperativaList from "../components/Cooperativa/CooperativaList";
+import CooperativaForm from "../components/Cooperativa/CooperativaForm";
+import ModalStyled from "../components/Shared/ModalStyled";
 
 export default function CooperativasPage() {
   const [modalOpen, setModalOpen] = useState(false);

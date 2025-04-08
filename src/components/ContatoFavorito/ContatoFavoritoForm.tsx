@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button, TextField, Box } from "@mui/material";
-import api from "../services/api";
-import { ContatoFavorito, TipoChavePix } from "../types/types";
-import PixKeyTypeSelect from "./PixKeyTypeSelect";
+import api from "../../services/api";
+import { ContatoFavorito, TipoChavePix } from "../../types/types";
+import PixKeyTypeSelect from "../Shared/PixKeyTypeSelect";
 
 interface ContatoFavoritoFormProps {
   cooperadoId: number;

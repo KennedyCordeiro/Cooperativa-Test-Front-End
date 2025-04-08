@@ -7,8 +7,8 @@ import {
   Checkbox,
   MenuItem,
 } from "@mui/material";
-import api from "../services/api";
-import { Cooperado, Cooperativa } from "../types/types";
+import api from "../../services/api";
+import { Cooperado, Cooperativa } from "../../types/types";
 
 interface CooperadoFormProps {
   initialData?: Cooperado;

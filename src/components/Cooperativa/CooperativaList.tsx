@@ -13,9 +13,9 @@ import {
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Cooperativa } from "../types/types";
-import { CooperativaService } from "../services/cooperativaService";
-import ModalStyled from "./ModalStyled";
+import { Cooperativa } from "../../types/types";
+import { CooperativaService } from "../../services/cooperativaService";
+import ModalStyled from "../Shared/ModalStyled";
 import CooperativaForm from "./CooperativaForm";
 
 export default function CooperativaList() {

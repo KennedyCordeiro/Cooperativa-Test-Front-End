@@ -6,8 +6,8 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
-import api from "../services/api";
-import { Cooperativa } from "../types/types";
+import api from "../../services/api";
+import { Cooperativa } from "../../types/types";
 
 interface CooperativaFormProps {
   initialData?: Cooperativa;
