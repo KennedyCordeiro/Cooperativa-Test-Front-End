@@ -16,6 +16,13 @@ export interface Cooperado {
   contaCorrente: string;
   cooperativaId: number;
   ativo: boolean;
+  cooperativa?: Cooperativa;
+}
+
+export interface Cooperativa {
+  id: number;
+  descricao: string;
+  ativo: boolean;
 }
 
 export enum TipoChavePix {

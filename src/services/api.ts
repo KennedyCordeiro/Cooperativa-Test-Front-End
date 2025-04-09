@@ -1,15 +1,13 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://localhost:5001/api",
 });
 
-// Interceptor para tratamento global de erros
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response) {
-      // Tratamento específico por status code
       switch (error.response.status) {
         case 401:
           console.error("Não autorizado");
