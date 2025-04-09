@@ -6,8 +6,8 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
-import api from "../../services/api";
 import { Cooperativa } from "../../types/types";
+import { CooperativaService } from "../../services/cooperativaService";
 
 interface CooperativaFormProps {
   initialData?: Cooperativa;
@@ -24,13 +24,16 @@ export default function CooperativaForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const cooperativaData = { descricao, ativo };
-
     try {
       if (initialData) {
-        await api.put(`/Cooperativas/${initialData.id}`, cooperativaData);
+        const cooperativaAtualizada: Cooperativa = {
+          ...initialData,
+          descricao,
+          ativo,
+        };
+        await CooperativaService.atualizar(cooperativaAtualizada);
       } else {
-        await api.post("/Cooperativas", cooperativaData);
+        await CooperativaService.criar({ descricao, ativo });
       }
       onSuccess();
     } catch (error) {

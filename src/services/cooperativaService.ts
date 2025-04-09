@@ -12,11 +12,11 @@ export const CooperativaService = {
     return response.data;
   },
 
-  async atualizar(
-    id: number,
-    cooperativa: Partial<Cooperativa>
-  ): Promise<Cooperativa> {
-    const response = await api.put(`/Cooperativas/${id}`, cooperativa);
+  async atualizar(cooperativa: Cooperativa): Promise<Cooperativa> {
+    const response = await api.put(
+      `/Cooperativas/${cooperativa.id}`,
+      cooperativa
+    );
     return response.data;
   },
 
